@@ -11,21 +11,41 @@
 
 int main(int argc, const char * argv[]) {
     int c=5;
-    struct node a,b,d,bf,*head ;
-    bf.value=2;
+    struct node d,bf,*head ;
+  typedef struct node Node;
+  typedef Node* NodePtr;
+    NodePtr p=(NodePtr) malloc (sizeof(Node)); //a
+    head=p;
+    p->value = c ;
+      int i,n=4;
+    for(i=0;i<n;i++){
+      p->next=(NodePtr) malloc (sizeof(Node));
+      p=p->next;
+      p->value=c+i+1;
+      p->next=NULL;
+      }
+  
+    /*p->next=(NodePtr) malloc (sizeof(Node)); //b
+    p->next->value=head->value+3;
+    
+    p->next->next=(NodePtr) malloc (sizeof(Node)); //d
+    p->next->next->value=11;
+    p->next->next->next=NULL;*/
+
+  
+    /*bf.value=2;
     head=&bf;
-    bf.next=&a;
-    a.value = c;
-    a.next=&b;
-    b.value=head->next->value+3;
-    b.next=&d;
+    bf.next=p;*/
+    
+    /*
+   
     d.value=11;
     d.next=NULL;
     printf("%d\n", head->value);
     printf("%d\n", head->next->value ); //what value for 5
     printf("%d\n", head->next->next->value ); //what value for 8
     printf("%d\n", head->next->next->next->value ); //d=11
-    
+    */
   //d.value
   //a.next->next->value
   //head->next->next-?value
@@ -37,11 +57,11 @@ int main(int argc, const char * argv[]) {
 
         
 
-    typedef struct node* NodePtr;
+    //typedef struct node* NodePtr;
     NodePtr tmp=head; //add temp value to faciliate
         
     //  Exercise III Use loop to print everything
-        int i,n=4;
+        int j,m=4;
         for(i=0;i<n;i++){
             printf("%3d->", tmp->value);
           tmp=tmp->next;
