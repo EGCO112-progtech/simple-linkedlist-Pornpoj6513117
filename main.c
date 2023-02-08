@@ -88,6 +88,13 @@ int main(int argc, const char * argv[]) {
          //use a loop to help
           
      */
+  tmp=head;
+  while(tmp!=NULL){
+    printf("deleting %d\n",tmp->value);
+    struct node *next = tmp->next;
+    free(tmp);
+    tmp=next;
+  }
     
     return 0;
 }
