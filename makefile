@@ -1,8 +1,8 @@
 compile: main.c 
-	 gcc main.c -o ming
+	 gcc main.c -o ll
 
-run: ming
-	 ./ming
+run: ll
+	 ./ll
 
-clean: ming
-	 rm ming
+clean: ll
+	 rm ll
